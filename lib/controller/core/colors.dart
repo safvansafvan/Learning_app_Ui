@@ -8,7 +8,7 @@ class AppColors {
   static Color bgColor = Colors.grey.withAlpha(300);
   static Color blue = Colors.blue;
   static Color red = Colors.red;
-  static Color pink = Colors.pink;
+  static Color purple = Colors.purple;
   static Color orange = Colors.orangeAccent;
   static Color appBar1 = const Color(0xff50006F);
   static Color appBar2 = const Color(0xff9E0266);

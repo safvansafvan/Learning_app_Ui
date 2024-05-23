@@ -1,18 +1,22 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:loginhomemt/controller/core/colors.dart';
 import 'package:loginhomemt/controller/core/custom_function.dart';
 import 'package:loginhomemt/controller/core/sizes.dart';
 
 import 'package:loginhomemt/view/widget/app_bar.dart';
+import 'package:loginhomemt/view/widget/bottom_widget.dart';
 import 'package:loginhomemt/view/widget/courses_widget.dart';
 import 'package:loginhomemt/view/widget/tab_bar.dart';
 import 'package:loginhomemt/view/widget/testimonal_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -84,6 +88,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: const BottomNavigationWidget(),
       ),
     );
   }
