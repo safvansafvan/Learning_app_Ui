@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:loginhomemt/controller/core/colors.dart';
 import 'package:loginhomemt/controller/core/custom_function.dart';
 import 'package:loginhomemt/controller/core/sizes.dart';
@@ -25,7 +24,7 @@ class TestimonalWidget extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 5,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return _buildTestimonal();
               },
@@ -39,7 +38,7 @@ class TestimonalWidget extends StatelessWidget {
 
 Widget _buildTestimonal() {
   return Container(
-    margin: const EdgeInsets.symmetric(vertical: 5),
+    margin: const EdgeInsets.only(bottom: 8),
     height: 120,
     width: double.infinity,
     decoration: BoxDecoration(
@@ -91,7 +90,7 @@ Widget _buildTestimonal() {
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to ",
                 maxLines: 3,
               ),
-            )
+            ),
           ],
         )
       ],
