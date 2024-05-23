@@ -11,4 +11,13 @@ class CustomFunctions {
       color: color ?? AppColors.black,
     );
   }
+
+  static TextStyle tabBar() {
+    return TextStyle(
+      fontFamily: 'ProximaNova',
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      color: AppColors.black,
+    );
+  }
 }
