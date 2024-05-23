@@ -10,29 +10,27 @@ class TestimonalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
       width: double.infinity,
       color: AppColors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Testimonal',
-                style: CustomFunctions.style(
-                    fontWeight: FontWeight.w600, size: 17),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return _buildTestimonal();
-                },
-              )
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Testimonal',
+              style:
+                  CustomFunctions.style(fontWeight: FontWeight.w600, size: 17),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return _buildTestimonal();
+              },
+            ),
+          ],
         ),
       ),
     );
