@@ -27,7 +27,7 @@ class RegisterView extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'SignUp',
+                        'Register',
                         style: CustomFunctions.style(
                             fontWeight: FontWeight.bold,
                             color: AppColors.white,
@@ -35,7 +35,7 @@ class RegisterView extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        'SignUp Your Account',
+                        'Register Your Account',
                         style: CustomFunctions.style(
                             fontWeight: FontWeight.w500,
                             color: AppColors.white,
@@ -87,7 +87,7 @@ class RegisterView extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 20),
                                   AppButton(
-                                    label: 'Login',
+                                    label: 'Register',
                                     onPressed: () {
                                       return Get.offAll(() => const HomePage(),
                                           curve: Curves.easeInOut,
@@ -129,7 +129,7 @@ class RegisterView extends StatelessWidget {
                 text: "Already have an account ? ",
                 style: TextStyle(fontSize: 16, color: Colors.black)),
             TextSpan(
-                text: "SignIn",
+                text: "Login",
                 style: TextStyle(
                     fontSize: 16,
                     color: Colors.deepPurple,
