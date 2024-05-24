@@ -60,6 +60,11 @@ Widget _buildTestimonal() {
               child: CircleAvatar(
                 radius: 12,
                 backgroundColor: AppColors.orange,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Image.asset('assets/images/dialog.png',
+                      color: AppColors.white),
+                ),
               ),
             )
           ],

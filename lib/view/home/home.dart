@@ -121,7 +121,7 @@ Widget _buildRatingAttendece({required Color color, int? index}) {
             Text(
               index == 1 ? 'Rating' : 'Attendece',
               style:
-                  CustomFunctions.style(fontWeight: FontWeight.w500, size: 16),
+                  CustomFunctions.style(fontWeight: FontWeight.w500, size: 14),
             )
           ],
         ),

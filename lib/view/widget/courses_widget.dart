@@ -52,7 +52,7 @@ Widget _courseContainer(int index) {
                   Text(
                     'Course Name',
                     style: CustomFunctions.style(
-                        fontWeight: FontWeight.w500, size: 16),
+                        fontWeight: FontWeight.w500, size: 15),
                   )
                 ],
               ),
