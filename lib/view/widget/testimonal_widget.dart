@@ -22,6 +22,7 @@ class TestimonalWidget extends StatelessWidget {
                   CustomFunctions.style(fontWeight: FontWeight.w600, size: 17),
             ),
             ListView.builder(
+              padding: const EdgeInsets.symmetric(vertical: 8),
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: 2,
