@@ -32,7 +32,7 @@ class _SplashViewState extends State<SplashView> {
               style: CustomFunctions.style(
                   fontWeight: FontWeight.w600,
                   color: AppColors.color,
-                  size: 14),
+                  size: 16),
             )
           ],
         ),

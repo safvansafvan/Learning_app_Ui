@@ -36,6 +36,7 @@ Widget _courseContainer() {
     child: Stack(
       children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(

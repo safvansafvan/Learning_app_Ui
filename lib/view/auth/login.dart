@@ -104,7 +104,7 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      _buildNoAccount()
+                      _buildDontHaveAccount()
                     ],
                   ),
                 ),
@@ -116,7 +116,7 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Widget _buildNoAccount() {
+  Widget _buildDontHaveAccount() {
     return GestureDetector(
       onTap: () {
         Get.offAll(() => const RegisterView(),
