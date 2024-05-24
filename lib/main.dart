@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:loginhomemt/controller/core/colors.dart';
-import 'package:loginhomemt/view/home/home.dart';
+import 'package:loginhomemt/view/auth/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'home ui',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: const HomePage(),
+      home: const LoginView(),
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
     );
