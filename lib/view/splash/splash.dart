@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
           children: [
             Lottie.asset("assets/lottie/splash.json"),
             Text(
-              "LEARNING HUB",
+              "L E A R N I N G H U B",
               style: CustomFunctions.style(
                   fontWeight: FontWeight.w600,
                   color: AppColors.black,
