@@ -19,7 +19,7 @@ class CoursesWidget extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 5),
-            child: _courseContainer(),
+            child: _courseContainer(index),
           );
         },
       ),
@@ -27,7 +27,7 @@ class CoursesWidget extends StatelessWidget {
   }
 }
 
-Widget _courseContainer() {
+Widget _courseContainer(int index) {
   return Container(
     height: 150,
     width: 250,
@@ -44,7 +44,8 @@ Widget _courseContainer() {
               height: 75,
               width: 220,
               decoration: BoxDecoration(
-                  color: AppColors.container, borderRadius: AppSizes.radius10),
+                  color: index.isEven ? AppColors.courseC2 : AppColors.courseC1,
+                  borderRadius: AppSizes.radius10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

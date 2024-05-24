@@ -13,6 +13,7 @@ class AppColors {
   static Color appBar1 = const Color(0xff50006F);
   static Color appBar2 = const Color(0xff9E0266);
   static Color color = const Color(0xff50006F);
-
-  static Color container = const Color(0xff50006F).withAlpha(300);
+  static Color container = const Color(0xffF1E8F5);
+  static Color courseC1 = const Color(0xffC7BAE8);
+  static Color courseC2 = const Color(0xffF7D4D0);
 }

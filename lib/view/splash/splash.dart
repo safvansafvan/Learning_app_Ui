@@ -31,7 +31,7 @@ class _SplashViewState extends State<SplashView> {
               "LEARNING HUB",
               style: CustomFunctions.style(
                   fontWeight: FontWeight.w600,
-                  color: AppColors.color,
+                  color: AppColors.black,
                   size: 16),
             )
           ],
