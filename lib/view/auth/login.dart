@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loginhomemt/controller/core/colors.dart';
+import 'package:loginhomemt/controller/core/custom_function.dart';
+import 'package:loginhomemt/view/home/home.dart';
 import 'package:loginhomemt/view/widget/app_button.dart';
 import 'package:loginhomemt/view/widget/auth_header_bg.dart';
 import 'package:loginhomemt/view/widget/text_field.dart';
@@ -27,20 +29,18 @@ class LoginView extends StatelessWidget {
                     children: [
                       Text(
                         'Login',
-                        style:
-                            Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.white,
-                                ),
+                        style: CustomFunctions.style(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                            size: 20),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         'Login Your Account',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.white,
-                        ),
+                        style: CustomFunctions.style(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.white,
+                            size: 16),
                       ),
                       Container(
                         margin: const EdgeInsets.all(20),
@@ -48,7 +48,7 @@ class LoginView extends StatelessWidget {
                           elevation: 6.0,
                           shadowColor:
                               Theme.of(context).brightness == Brightness.light
-                                  ? Colors.black
+                                  ? AppColors.black
                                   : Colors.grey.shade500,
                           borderRadius: BorderRadius.circular(10),
                           child: Container(
@@ -79,49 +79,65 @@ class LoginView extends StatelessWidget {
                                   alignment: Alignment.topRight,
                                   child: TextButton(
                                     onPressed: () {},
-                                    child: const Text(
-                                      'Forgot password ?',
+                                    child: Text(
+                                      'Forgot password ?  ',
+                                      style: CustomFunctions.style(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.color,
+                                          size: 13),
                                     ),
                                   ),
                                 ),
                                 const SizedBox(height: 20),
                                 AppButton(
                                   label: 'Login',
-                                  onPressed: () {},
-                                )
+                                  onPressed: () {
+                                    return Get.offAll(() => const HomePage(),
+                                        curve: Curves.easeInOut,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        transition: Transition.zoom);
+                                  },
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.offAll(() => const RegisterView(),
-                              curve: Curves.easeInOut,
-                              duration: const Duration(milliseconds: 300),
-                              transition: Transition.zoom);
-                        },
-                        child: RichText(
-                            text: const TextSpan(children: [
-                          TextSpan(
-                              text: "Don't have an account ? ",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black)),
-                          TextSpan(
-                            text: "Register",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.w700),
-                          )
-                        ])),
-                      )
+                      _buildNoAccount()
                     ],
                   ),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNoAccount() {
+    return GestureDetector(
+      onTap: () {
+        Get.offAll(() => const RegisterView(),
+            curve: Curves.easeInOut,
+            duration: const Duration(milliseconds: 300),
+            transition: Transition.zoom);
+      },
+      child: RichText(
+        text: const TextSpan(
+          children: [
+            TextSpan(
+                text: "Don't have an account ? ",
+                style: TextStyle(fontSize: 16, color: Colors.black)),
+            TextSpan(
+              text: "Register",
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.deepPurple,
+                  fontWeight: FontWeight.w700),
+            )
+          ],
         ),
       ),
     );

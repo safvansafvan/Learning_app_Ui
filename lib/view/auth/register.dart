@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loginhomemt/controller/core/colors.dart';
+import 'package:loginhomemt/controller/core/custom_function.dart';
 import 'package:loginhomemt/view/auth/login.dart';
+import 'package:loginhomemt/view/home/home.dart';
 import 'package:loginhomemt/view/widget/app_button.dart';
 import 'package:loginhomemt/view/widget/auth_header_bg.dart';
 import 'package:loginhomemt/view/widget/text_field.dart';
@@ -25,20 +28,18 @@ class RegisterView extends StatelessWidget {
                     children: [
                       Text(
                         'SignUp',
-                        style:
-                            Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                        style: CustomFunctions.style(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                            size: 20),
                       ),
                       const SizedBox(height: 10),
-                      const Text(
+                      Text(
                         'SignUp Your Account',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
+                        style: CustomFunctions.style(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.white,
+                            size: 16),
                       ),
                       Container(
                         margin: const EdgeInsets.all(20),
@@ -87,7 +88,13 @@ class RegisterView extends StatelessWidget {
                                   const SizedBox(height: 20),
                                   AppButton(
                                     label: 'Login',
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      return Get.offAll(() => const HomePage(),
+                                          curve: Curves.easeInOut,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          transition: Transition.zoom);
+                                    },
                                   )
                                 ],
                               ),
@@ -95,36 +102,39 @@ class RegisterView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.offAll(() => const LoginView(),
-                              curve: Curves.easeInOut,
-                              duration: const Duration(milliseconds: 300),
-                              transition: Transition.zoom);
-                        },
-                        child: RichText(
-                          text: const TextSpan(
-                            children: [
-                              TextSpan(
-                                  text: "Already have an account ? ",
-                                  style: TextStyle(
-                                      fontSize: 16, color: Colors.black)),
-                              TextSpan(
-                                  text: "SignIn",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.deepPurple,
-                                      fontWeight: FontWeight.w700))
-                            ],
-                          ),
-                        ),
-                      )
+                      _buildHaveAnAccount()
                     ],
                   ),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHaveAnAccount() {
+    return GestureDetector(
+      onTap: () {
+        Get.offAll(() => const LoginView(),
+            curve: Curves.easeInOut,
+            duration: const Duration(milliseconds: 300),
+            transition: Transition.zoom);
+      },
+      child: RichText(
+        text: const TextSpan(
+          children: [
+            TextSpan(
+                text: "Already have an account ? ",
+                style: TextStyle(fontSize: 16, color: Colors.black)),
+            TextSpan(
+                text: "SignIn",
+                style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.w700))
+          ],
         ),
       ),
     );

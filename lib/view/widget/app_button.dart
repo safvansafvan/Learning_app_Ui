@@ -9,26 +9,31 @@ class AppButton extends StatelessWidget {
   final Function() onPressed;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: context.width - 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        gradient: RadialGradient(
-          center: Alignment.topLeft,
-          radius: 1.5,
-          colors: [
-            AppColors.appBar2,
-            AppColors.appBar1,
-          ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: context.width - 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          gradient: RadialGradient(
+            center: Alignment.topLeft,
+            radius: 1.5,
+            colors: [
+              AppColors.appBar2,
+              AppColors.appBar1,
+            ],
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        child: Center(
-          child: Text(
-            label,
-            style: CustomFunctions.style(
-                fontWeight: FontWeight.w600, size: 20, color: AppColors.white),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          child: Center(
+            child: Text(
+              label,
+              style: CustomFunctions.style(
+                  fontWeight: FontWeight.w600,
+                  size: 20,
+                  color: AppColors.white),
+            ),
           ),
         ),
       ),
